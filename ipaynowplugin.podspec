@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.ipaynow.cn"
   
 
-  s.source_files = "*"
+  s.source_files = "lib/*"
 
   s.license      = "MIT"
   
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
   
 
-  s.source       = { :git => "https://github.com/Hstripe/libipaynow.git", :tag => "1.7.2" }
+  s.source       = { :git => "https://github.com/Hstripe/libipaynow/tree/1.7.2.git", :tag => "1.7.2" }
 
 
   s.frameworks = "CoreGraphics", "CoreTelephony","QuartzCore","SystemConfiguration","Security","Foundation","UIKit"
