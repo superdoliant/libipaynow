@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   
   s.name         = "ipaynowplugin"
-  s.version      = "1.7.2"
+  s.version      = "1.7.3.1"
   s.summary      = "ipaynowplugin SDK"
 
   
@@ -14,16 +14,15 @@ Pod::Spec.new do |s|
   
 
   s.source_files = "lib/*"
-
+  s.public_header_files = "lib/*.h"
+  s.vendored_libraries = "lib/*.a"
+  s.resource = "lib/*.bundle"
   s.license      = "MIT"
-  
-
   s.author       = { "Hstripe" => "huangrui@ipaynow.cn" }
-  
   s.platform     = :ios, "6.0"
   
 
-  s.source       = { :git => "https://github.com/Hstripe/libipaynow.git", :tag => "1.7.2" }
+  s.source       = { :git => "https://github.com/Hstripe/libipaynow.git", :tag => s.version }
 
 
   s.frameworks = "CoreGraphics", "CoreTelephony","QuartzCore","SystemConfiguration","Security","Foundation","UIKit"
