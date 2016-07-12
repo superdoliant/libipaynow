@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   
   s.name         = "ipaynowplugin"
-  s.version      = "1.7.3.1"
+  s.version      = "1.7.3.2"
   s.summary      = "ipaynowplugin SDK"
 
   
