@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   
   s.name         = "ipaynowplugin"
-  s.version      = "1.7.3.4"
+  s.version      = "1.7.3.41"
   s.summary      = "ipaynowplugin SDK"
   s.description  = <<-DESC
                    Help developer to quickly intergrate variety of payment methods
@@ -26,35 +26,38 @@ Pod::Spec.new do |s|
   s.subspec 'Alipay' do |ali|
     ali.ios.vendored_frameworks = 'lib/Channels/AliPayPlugin/AlipaySDK.framework'
     ali.resource = 'lib/Channels/AliPayPlugin/AlipaySDK.bundle'
-    ali.dependency = 'ipaynowplugin/Core'
+    ali.dependency 'ipaynowplugin/Core'
+    ali.frameworks = 'CoreMotion'
   end
  
   s.subspec 'Weixin' do |wx|
     wx.vendored_libraries = 'lib/Channels/WechatPlugin/*.a'
     wx.source_files = 'lib/Channels/WechatPlugin/*.h'
-    wx.dependency = 'ipaynowplugin/Core'
+    wx.public_header_files = 'lib/Channels/WechatPlugin/*.h'
+    wx.dependency 'ipaynowplugin/Core'
   end
   
-  s.subspec 'Unionpay' do |up|
-    up.vendored_libraries = 'lib/Channels/UPPayPlugin/*.a'
-    up.source_files = 'lib/Channels/UPPayPlugin/*.h'
-    up.dependency = 'ipaynowplugin/Core'
-  end
+  # s.subspec 'Unionpay' do |up|
+  #   up.vendored_libraries = 'lib/Channels/UPPayPlugin/*.a'
+  #   up.source_files = 'lib/Channels/UPPayPlugin/*.h'
+  #   up.dependency 'ipaynowplugin/Core'
+  # end
   
-  s.subspec 'BaiduWallet' do |bd|
-    bd.resource = 'lib/Channels/BDWalletSDK/*.bundle'
-    bd.public_header_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
-    bd.vendored_libraries = 'lib/Channels/BDWalletSDK/*.a'
-    bd.source_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
-    bd.dependency = 'ipaynowplugin/Core'
-  end
+  # s.subspec 'BaiduWallet' do |bd|
+  #   bd.resource = 'lib/Channels/BDWalletSDK/*.bundle'
+  #   bd.public_header_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
+  #   bd.vendored_libraries = 'lib/Channels/BDWalletSDK/*.a'
+  #   bd.source_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
+  #   bd.dependency 'ipaynowplugin/Core'
+  # end
 
-  s.subspec 'ApplePay' do |ap|
-    ap.source_files = 'lib/Channels/UPApplePay/*.h'
-    ap.public_header_files = 'lib/Channels/UPApplePay/*.h'
-    ap.vendored_libraries = 'lib/Channels/UPApplePay/*.a'
-    ap.dependency = 'ipaynowplugin/Core'
-  end
+  # s.subspec 'ApplePay' do |ap|
+  #   ap.source_files = 'lib/Channels/UPApplePay/*.h'
+  #   ap.public_header_files = 'lib/Channels/UPApplePay/*.h'
+  #   ap.vendored_libraries = 'lib/Channels/UPApplePay/*.a'
+  #   ap.dependency 'ipaynowplugin/Core'
+  #   ap.frameworks = "PassKit"
+  # end
 
 
 end
