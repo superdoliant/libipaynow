@@ -51,6 +51,7 @@ Pod::Spec.new do |s|
     bd.vendored_libraries = 'lib/Channels/BDWalletSDK/**/*.a'
     bd.source_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
     bd.frameworks = 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'ImageIO', 'MessageUI', 'MobileCoreServices'
+    bd.requires_arc = false
     bd.dependency 'ipaynowplugin/Core'
     end
 
