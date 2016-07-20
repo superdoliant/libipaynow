@@ -28,15 +28,15 @@ Pod::Spec.new do |s|
   s.subspec 'Alipay' do |ali|
     ali.ios.vendored_frameworks = "lib/Channels/AliPayPlugin/AlipaySDK.framework"
     ali.resource = "lib/Channels/AliPayPlugin/AlipaySDK.bundle"
-    ali.dependency "ipaynowplugin/Core"
     ali.frameworks = "CoreMotion"
+    ali.dependency 'ipaynowplugin/Core'
   end
  
   s.subspec 'Weixin' do |wx|
     wx.ios.vendored_libraries = "lib/Channels/WechatPlugin/*.a"
     wx.source_files = "lib/Channels/WechatPlugin/*.h"
     wx.public_header_files = "lib/Channels/WechatPlugin/*.h"
-    wx.dependency "ipaynowplugin/Core"
+    wx.dependency 'ipaynowplugin/Core'
   end
   
   s.subspec 'Unionpay' do |up|
@@ -46,12 +46,11 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'BaiduWallet' do |bd|
-    bd.resource = 'lib/Channels/BDWalletSDK/*.bundle'
     bd.public_header_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
-    bd.vendored_libraries = 'lib/Channels/BDWalletSDK/**/*.a'
     bd.source_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
+    bd.resource = 'lib/Channels/BDWalletSDK/*.bundle'
+    bd.vendored_libraries = 'lib/Channels/BDWalletSDK/**/*.a'
     bd.frameworks = 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'ImageIO', 'MessageUI', 'MobileCoreServices'
-    bd.requires_arc = false
     bd.dependency 'ipaynowplugin/Core'
     end
 
@@ -59,8 +58,8 @@ Pod::Spec.new do |s|
     ap.source_files = 'lib/Channels/UPApplePay/*.h'
     ap.public_header_files = 'lib/Channels/UPApplePay/*.h'
     ap.vendored_libraries = 'lib/Channels/UPApplePay/*.a'
+    ap.ios.weak_frameworks = 'PassKit'
     ap.dependency 'ipaynowplugin/Core'
-    ap.frameworks = "PassKit"
   end
 
 
