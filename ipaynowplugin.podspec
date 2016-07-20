@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   
   s.name         = "ipaynowplugin"
-  s.version      = "1.7.3.42"
+  s.version      = "1.7.3.43"
   s.summary      = "ipaynowplugin SDK"
   s.description  = <<-DESC
                    Help developer to quickly intergrate variety of payment methods
@@ -45,14 +45,14 @@ Pod::Spec.new do |s|
     up.dependency 'ipaynowplugin/Core'
   end
   
-  # s.subspec 'BaiduWallet' do |bd|
-  #   bd.resource = 'lib/Channels/BDWalletSDK/*.bundle'
-  #   bd.public_header_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
-  #   bd.vendored_libraries = 'lib/Channels/BDWalletSDK/*.a'
-  #   bd.source_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
-  #   bd.frameworks = 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'ImageIO', 'MessageUI', 'MobileCoreServices'
-  #   bd.dependency 'ipaynowplugin/Core'
-  # end
+  s.subspec 'BaiduWallet' do |bd|
+    bd.resource = 'lib/Channels/BDWalletSDK/*.bundle'
+    bd.public_header_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
+    bd.vendored_libraries = 'lib/Channels/BDWalletSDK/**/*.a'
+    bd.source_files = 'lib/Channels/BDWalletSDK/Library/**/*.h'
+    bd.frameworks = 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'ImageIO', 'MessageUI', 'MobileCoreServices'
+    bd.dependency 'ipaynowplugin/Core'
+    end
 
   s.subspec 'ApplePay' do |ap|
     ap.source_files = 'lib/Channels/UPApplePay/*.h'
