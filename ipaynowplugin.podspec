@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   
   s.name         = "ipaynowplugin"
-  s.version      = "1.7.3.43"
+  s.version      = "1.7.4"
   s.summary      = "ipaynowplugin SDK"
   s.description  = <<-DESC
                    Help developer to quickly intergrate variety of payment methods
@@ -61,6 +61,5 @@ Pod::Spec.new do |s|
     ap.ios.weak_frameworks = 'PassKit'
     ap.dependency 'ipaynowplugin/Core'
   end
-
 
 end
