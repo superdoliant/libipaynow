@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   
   s.name         = "ipaynowplugin"
-  s.version      = "1.7.5"
+  s.version      = "1.9.0"
   s.summary      = "ipaynowplugin SDK"
   s.description  = <<-DESC
                    Help developer to quickly intergrate variety of payment methods
